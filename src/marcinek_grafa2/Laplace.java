@@ -1,4 +1,4 @@
-package projekt2;
+package marcinek_grafa2;
 
 import java.awt.image.BufferedImage;
 import java.awt.image.ConvolveOp;
@@ -9,7 +9,7 @@ public class Laplace {
 
 	BufferedImage src;
 	private static final float[] laplace = {
-                  0.f,	-1.f,	0.f,
+            0.f,	-1.f,	0.f,
 		 -1.f,	 4.f,	-1.f,
 		 0.f,	-1.f,	0.f
 	};
