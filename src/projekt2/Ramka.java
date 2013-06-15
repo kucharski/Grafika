@@ -4,8 +4,6 @@ package projekt2;
 import java.awt.Color;
 import java.awt.Point;
 import java.awt.image.BufferedImage;
-import java.awt.image.ByteLookupTable;
-import java.awt.image.LookupOp;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -45,7 +43,6 @@ public class Ramka extends javax.swing.JFrame {
         Mnozenie_ = new javax.swing.JMenuItem();
         Dzielenie_ = new javax.swing.JMenuItem();
         Dodawanie_obrazkow_ = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         Sobel_ = new javax.swing.JMenuItem();
         Prewit_ = new javax.swing.JMenuItem();
@@ -180,14 +177,6 @@ public class Ramka extends javax.swing.JFrame {
             }
         });
         jMenu2.add(Dodawanie_obrazkow_);
-
-        jMenuItem2.setText("Negatyw");
-        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem2ActionPerformed(evt);
-            }
-        });
-        jMenu2.add(jMenuItem2);
 
         Plik.add(jMenu2);
 
@@ -397,10 +386,6 @@ panelu.ten_namalowany = new Erozja(panelu.ten_namalowany).run();
         panelu.ten_namalowany = new Laplace(panelu.ten_namalowany).run();
         jPanel1.repaint();
     }//GEN-LAST:event_jMenuItem3ActionPerformed
-
-    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-       
-    }//GEN-LAST:event_jMenuItem2ActionPerformed
     public static void main(String args[]) {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
@@ -434,7 +419,6 @@ panelu.ten_namalowany = new Erozja(panelu.ten_namalowany).run();
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;

@@ -10,10 +10,10 @@ public class Dylatacja {
 	private static int[][] element = {
 			{ 1, 1, 1, 1, 1, 1},
 			{ 1, 1, 1, 1, 1, 1},
-                        { 1, 1, 1, 1, 1, 1},
-                        { 1, 1, 1, 1, 1, 1},
-                        { 1, 1, 1, 1, 1, 1},
-                        { 1, 1, 1, 1, 1, 1},
+            { 1, 1, 1, 1, 1, 1},
+            { 1, 1, 1, 1, 1, 1},
+            { 1, 1, 1, 1, 1, 1},
+            { 1, 1, 1, 1, 1, 1},
 			};
     private static Color kolor, kolor2;
     private static int k1,k2;

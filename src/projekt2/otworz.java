@@ -1,8 +1,10 @@
 package projekt2;
 
+
 import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.*;
+
 import java.util.StringTokenizer;
 import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
@@ -38,7 +40,7 @@ public static BufferedImage obrazZPliku() throws FileNotFoundException, IOExcept
             StringTokenizer st1;
             p3 = new BufferedReader(new FileReader(plik));
             p6 = new DataInputStream(new FileInputStream(plik));
-            out = new File("E:\\projekt2.ppm");
+            out = new File("projekt_grafika.ppm");
             bw = new PrintWriter(new BufferedWriter(new FileWriter(out)));
 
             wybieraj info = new wybieraj();
