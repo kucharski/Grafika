@@ -39,6 +39,7 @@ public class MojPanel extends javax.swing.JPanel {
     public static int []blue;
     private static int r,g,b;
     BufferedImage skladak;
+    BufferedImage ten_namalowany;
     /** Creates new form MojPanel */
     public MojPanel() {
         obrazek = null;
@@ -102,22 +103,13 @@ public class MojPanel extends javax.swing.JPanel {
     
     public boolean WyborObrazka2() throws IOException
     {
-        boolean zmiana2 = false;
         jFileChooser1 = new JFileChooser();
         FileNameExtensionFilter filtr = new FileNameExtensionFilter("Pliki *.jpg *.png","jpg", "jpeg", "png");
         jFileChooser1.setFileFilter(filtr);
         int wynik = jFileChooser1.showOpenDialog(this);
-        if (wynik == JFileChooser.APPROVE_OPTION) {
-            plik2 = jFileChooser1.getSelectedFile();
-            obrazek2 = ImageIO.read(plik2);
-            typ2 = obrazek2.getType();
-            if (plik2 != null) {
-                //this.setSize(obrazek2.getWidth(), obrazek2.getHeight());
-                zmiana2 = true;
-            }
-        }
-        repaint();
-        return zmiana2;
+        plik2 = jFileChooser1.getSelectedFile();
+        obrazek2 = ImageIO.read(plik2);
+        return false;
     }
 
     public void WczytajPonownie() throws IOException
@@ -634,37 +626,32 @@ public class MojPanel extends javax.swing.JPanel {
           repaint();
         }
     
-    public void dodaj_2_obrazki(BufferedImage ob1, BufferedImage ob2){
-    try{
-    int r1,r2,g1,g2,b1,b2;
+    public void dodaj_2_obrazki(){
+        Color newColor;
+        Color prevColor;
+        int r, g, b;
+        if(obrazek.getWidth() != obrazek2.getWidth() || obrazek.getHeight() != obrazek2.getHeight()){
+            javax.swing.JOptionPane.showMessageDialog(this, "Można dodawać jedynie obrazy o takich samych wymiarach");
+            return;
+            }
+        for (int i = 0; i < obrazek2.getWidth(); i++){
+            for(int j = 0; j < obrazek2.getHeight(); j++){
+            prevColor = new Color(obrazek.getRGB(i, j));
+            newColor = new Color(obrazek2.getRGB(i, j));
 
-     for (int i = 0; i< ob1.getWidth(); i++) {
-                    for (int j = 0; j < ob1.getHeight(); j++) {
-                        Color color1 = new Color(ob1.getRGB(i, j));
-                        Color color2 = new Color(ob2.getRGB(i, j));
+            r = (newColor.getRed() + prevColor.getRed())/2;
+            g = (newColor.getGreen() + prevColor.getGreen())/2;
+            b = (newColor.getBlue() + prevColor.getBlue())/2;
 
-                        r1 = color1.getRed();
-                        r2 = color2.getRed();
-                        r = (r1+r2)/2;
-                        red[r]++;
-
-                        g1 = color1.getGreen();
-                        g2 = color2.getGreen();
-                        g = (g1+g2)/2;
-                        green[g]++;
-
-                        b1 = color1.getBlue();
-                        b2 = color2.getBlue();
-                        b = (b1+b2)/2;
-                        blue[b]++;
-                        Color nowy = new Color (r,g,b);
-                        skladak.setRGB(i, j, nowy.getRGB());
-                    }
-        }
-    obrazek=skladak;
-    }catch(NullPointerException e){System.out.println("Nie ma obrazkow do dodania "+e);}
-     catch(ArrayIndexOutOfBoundsException e){System.out.println("wymiary obrazków znacznie sie róznią: "+e);}
- }
+            Color nowy = new Color (r, g, b);
+            obrazek.setRGB(i, j, nowy.getRGB());
+            }
+            }
+        repaint();
+}
+    
+    
+    
     
     
 

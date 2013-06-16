@@ -37,6 +37,9 @@ public class OknoGlowne extends javax.swing.JFrame {
         jMenuItem5 = new javax.swing.JMenuItem();
         jMenuItem6 = new javax.swing.JMenuItem();
         jMenuItem8 = new javax.swing.JMenuItem();
+        jMenu9 = new javax.swing.JMenu();
+        jMenuItem27 = new javax.swing.JMenuItem();
+        jMenuItem28 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenuItem13 = new javax.swing.JMenuItem();
@@ -206,6 +209,16 @@ public class OknoGlowne extends javax.swing.JFrame {
             }
         });
         jMenu2.add(jMenuItem8);
+
+        jMenu9.setText("Kontrast");
+
+        jMenuItem27.setText("Większy");
+        jMenu9.add(jMenuItem27);
+
+        jMenuItem28.setText("Mniejszy");
+        jMenu9.add(jMenuItem28);
+
+        jMenu2.add(jMenu9);
 
         jMenu4.setText("Wykrywanie krawędzi");
         jMenu4.setEnabled(false);
@@ -547,8 +560,7 @@ public class OknoGlowne extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(OknoGlowne.class.getName()).log(Level.SEVERE, null, ex);
         }
-        mojPanel1.dodaj_2_obrazki(mojPanel1.obrazek, mojPanel1.obrazek2);
-        mojPanel1.repaint();
+        mojPanel1.dodaj_2_obrazki();
     }//GEN-LAST:event_jMenuItem26ActionPerformed
 
     /**
@@ -575,6 +587,7 @@ public class OknoGlowne extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenu jMenu8;
+    private javax.swing.JMenu jMenu9;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
@@ -595,6 +608,8 @@ public class OknoGlowne extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem24;
     private javax.swing.JMenuItem jMenuItem25;
     private javax.swing.JMenuItem jMenuItem26;
+    private javax.swing.JMenuItem jMenuItem27;
+    private javax.swing.JMenuItem jMenuItem28;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
