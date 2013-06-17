@@ -93,7 +93,8 @@ public class MojPanel extends javax.swing.JPanel {
             obrazek = ImageIO.read(plik);
             typ = obrazek.getType();
             if (plik != null) {
-                this.setSize(obrazek.getWidth(), obrazek.getHeight());
+                if (obrazek.getWidth()>400 && obrazek.getHeight()>400)
+                    this.setSize(obrazek.getWidth(), obrazek.getHeight());
                 zmiana = true;
             }
         }
@@ -192,6 +193,20 @@ public class MojPanel extends javax.swing.JPanel {
         ConvolveOp op = new ConvolveOp(kernel);
         Filtr(op);
     }
+    
+    private void Convolve1(float[] tabK)
+    {
+        Kernel kernel = new Kernel(7, 1, tabK);
+        ConvolveOp op = new ConvolveOp(kernel);
+        Filtr(op);
+    }
+    
+    private void Convolve2(float[] tabK)
+    {
+        Kernel kernel = new Kernel(1, 4, tabK);
+        ConvolveOp op = new ConvolveOp(kernel);
+        Filtr(op);
+    }
 
     public void Negatyw()
     {
@@ -246,19 +261,21 @@ public class MojPanel extends javax.swing.JPanel {
 
     public void KrawedzPoziome()
     {
-        float[] tab = {-1.0f, -1.0f, -1.0f, 2.0f, 2.0f, 2.0f, -1.0f, -1.0f, -1.0f};
-        Convolve(tab);
+        float[] tab = {1.0f, 1.0f, 1.0f, 1.0f};
+        Convolve2(tab);
     }
 
     public void KrawedzPionowe()
     {
-        float[] tab = {-1.0f, 2.0f, -1.0f, -1.0f, 2.0f, -1.0f, -1.0f, 2.0f, -1.0f};
-        Convolve(tab);
+        float[] tab = {1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f};
+        Convolve1(tab);
     }
 
     public void KrawedzLewaPrzekatna()
     {
-        float[] tab = {2.0f, -1.0f, -1.0f, -1.0f, 2.0f, -1.0f, -1.0f, -1.0f, 2.0f};
+        float[] tab = {2.0f, -1.0f, -1.0f,
+                       -1.0f, 2.0f, -1.0f, 
+                       -1.0f, -1.0f, 2.0f};
         Convolve(tab);
     }
 
@@ -649,6 +666,7 @@ public class MojPanel extends javax.swing.JPanel {
             }
         repaint();
 }
+    
     
     
     

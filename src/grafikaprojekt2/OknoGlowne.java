@@ -505,12 +505,12 @@ public class OknoGlowne extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem19ActionPerformed
 
     private void jMenuItem7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem7ActionPerformed
-        mojPanel1.dylacja(2);
+        mojPanel1.dylacja(1);
         mojPanel1.repaint();
     }//GEN-LAST:event_jMenuItem7ActionPerformed
 
     private void jMenuItem14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem14ActionPerformed
-        mojPanel1.erozja(2);
+        mojPanel1.erozja(1);
         mojPanel1.repaint();
     }//GEN-LAST:event_jMenuItem14ActionPerformed
 
@@ -536,7 +536,7 @@ public class OknoGlowne extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem21ActionPerformed
 
     private void jMenuItem22ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem22ActionPerformed
-        mojPanel1.progowanie(16);
+        mojPanel1.progowanie(20);
     }//GEN-LAST:event_jMenuItem22ActionPerformed
 
     private void jMenuItem23ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem23ActionPerformed
